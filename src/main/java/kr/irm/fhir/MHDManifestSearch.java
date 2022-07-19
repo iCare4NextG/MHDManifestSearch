@@ -94,7 +94,7 @@ public class MHDManifestSearch extends UtilContext {
 				LOG.error("option required: {}", OPTION_SERVER_URL);
 			}
 
-			// Manifest ResourceId (UUID)
+			// Manifest ResourceId (UUID for Lookup)
 			if (cl.hasOption(OPTION_MANIFEST_UUID)) {
 				String manifestUuid = cl.getOptionValue(OPTION_MANIFEST_UUID);
 				LOG.info("option {}={}", OPTION_MANIFEST_UUID, manifestUuid);
@@ -102,7 +102,7 @@ public class MHDManifestSearch extends UtilContext {
 				optionMap.put(OPTION_MANIFEST_UUID, manifestUuid);
 			}
 
-			// id
+			// id (Document Manifest UUID for Search)
 			if (cl.hasOption(OPTION_ID)) {
 				String id = cl.getOptionValue(OPTION_ID);
 				LOG.info("option {}={}", OPTION_ID, id);
@@ -118,7 +118,7 @@ public class MHDManifestSearch extends UtilContext {
 				optionMap.put(OPTION_PATIENT_UUID, patientUuid);
 			}
 
-			// patient.identifier
+			// patient.identifier (ex. PatientIdValue^^^&AssignerId&AssignerIdType)
 			if (cl.hasOption(OPTION_PATIENT_IDENTIFIER)) {
 				String patientIdentifier = cl.getOptionValue(OPTION_PATIENT_IDENTIFIER);
 				LOG.info("option {}={}", OPTION_PATIENT_IDENTIFIER, patientIdentifier);
@@ -126,7 +126,7 @@ public class MHDManifestSearch extends UtilContext {
 				optionMap.put(OPTION_PATIENT_IDENTIFIER, patientIdentifier);
 			}
 
-			// created
+			// created (When this document manifest created)
 			if (cl.hasOption(OPTION_CREATED)) {
 				String[] component = cl.getOptionValue(OPTION_CREATED).split(",");
 				List<String> createdList = getComponentList(component);
@@ -135,7 +135,7 @@ public class MHDManifestSearch extends UtilContext {
 				optionMap.put(OPTION_CREATED, createdList);
 			}
 
-			// author.family
+			// author.family (Who and/or what authored the DocumentManifest)
 			if (cl.hasOption(OPTION_AUTHOR_FAMILY)) {
 				String[] component = cl.getOptionValue(OPTION_AUTHOR_FAMILY).split(",");
 				List<String> authorFamilyList = getComponentList(component);
@@ -144,7 +144,7 @@ public class MHDManifestSearch extends UtilContext {
 				optionMap.put(OPTION_AUTHOR_FAMILY, authorFamilyList);
 			}
 
-			// author.given
+			// author.given (Who and/or what authored the DocumentManifest)
 			if (cl.hasOption(OPTION_AUTHOR_GIVEN)) {
 				String[] component = cl.getOptionValue(OPTION_AUTHOR_GIVEN).split(",");
 				List<String> authorGivenList = getComponentList(component);
@@ -153,7 +153,7 @@ public class MHDManifestSearch extends UtilContext {
 				optionMap.put(OPTION_AUTHOR_GIVEN, authorGivenList);
 			}
 
-			// identifier
+			// identifier (Other identifiers for the manifest)
 			if (cl.hasOption(OPTION_IDENTIFIER)) {
 				String[] component = cl.getOptionValue(OPTION_IDENTIFIER).split(",");
 				List<String> identifierList = getComponentList(component);
@@ -162,7 +162,7 @@ public class MHDManifestSearch extends UtilContext {
 				optionMap.put(OPTION_IDENTIFIER, identifierList);
 			}
 
-			// type
+			// type (Kind of document set)
 			if (cl.hasOption(OPTION_TYPE)) {
 				String[] component = cl.getOptionValue(OPTION_TYPE).split(",");
 				List<String> typeList = getComponentList(component);
@@ -171,7 +171,7 @@ public class MHDManifestSearch extends UtilContext {
 				optionMap.put(OPTION_TYPE, typeList);
 			}
 
-			// source
+			// source (The source system/application/software)
 			if (cl.hasOption(OPTION_SOURCE)) {
 				String[] component = cl.getOptionValue(OPTION_SOURCE).split(",");
 				List<String> sourceList = getComponentList(component);
@@ -180,7 +180,7 @@ public class MHDManifestSearch extends UtilContext {
 				optionMap.put(OPTION_SOURCE, sourceList);
 			}
 
-			// status
+			// status (Document Manifest Status : current | superseded | entered-in-error)
 			if (cl.hasOption(OPTION_STATUS)) {
 				String[] component = cl.getOptionValue(OPTION_STATUS).split(",");
 				List<String> statusList = getComponentList(component);
